@@ -101,8 +101,8 @@ def main(max_commits_to_check_in_range=50):
                 log.info('Checking SHA "{}"'.format(sha))
                 subprocess.check_output('git checkout -q -f {}'.format(sha), shell=True)
                 
-                if nb_path:
-                    if not visit_content_nbs(nb_path, execution_check):
+                if args.nb_path:
+                    if not visit_content_nbs(args.nb_path, execution_check):
                         success = False
                 else:
                     if not visit_content_nbs('.', execution_check):
