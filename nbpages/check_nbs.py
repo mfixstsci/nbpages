@@ -74,7 +74,7 @@ def main(max_commits_to_check_in_range=50):
     log.setLevel(logging.INFO)
     if args.range is None:
         if args.nb_path:
-            success = visit_content_nbs(nb_path, execution_check)
+            success = visit_content_nbs(args.nb_path, execution_check)
         else:
             success = visit_content_nbs('.', execution_check)
     else:
