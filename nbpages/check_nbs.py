@@ -67,7 +67,7 @@ def main(max_commits_to_check_in_range=50):
                              'argument for "git rev-list", and git must be '
                              'installed and accessible from the calling shell.')
     parser.add_argument('--notebook-path', default='.', dest='nb-path',
-                        help='Relative path of notebooks')
+                        help='Relative path of notebooks to check')
     args = parser.parse_args()
 
     logging.basicConfig()
