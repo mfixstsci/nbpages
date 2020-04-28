@@ -390,6 +390,9 @@ def make_parser(parser=None):
                         help='The path and file name to write a Junit XML '
                              'report to. Extension will always be .xml')
 
+    parser.add_argument("--notebook-path", default='.' dest='nb-path',
+                        help='The path to notebooks you wish to convert.')
+
     return parser
 
 
