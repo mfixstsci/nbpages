@@ -66,14 +66,14 @@ def main(max_commits_to_check_in_range=50):
                         help='A range of git commits to check. Must be a valid'
                              'argument for "git rev-list", and git must be '
                              'installed and accessible from the calling shell.')
-    parser.add_argument('--notebook-path', default='.', dest='nb-path',
+    parser.add_argument('--notebook-path', default='.', dest='nb_path',
                         help='Relative path of notebooks to check')
     args = parser.parse_args()
 
     logging.basicConfig()
     log.setLevel(logging.INFO)
     if args.range is None:
-        success = visit_content_nbs(args.nb-path, execution_check)
+        success = visit_content_nbs(args.nb_path, execution_check)
 
     else:
         initial_branch = subprocess.check_output('git rev-parse --abbrev-ref HEAD', shell=True).decode().strip()
@@ -99,7 +99,7 @@ def main(max_commits_to_check_in_range=50):
                 log.info('Checking SHA "{}"'.format(sha))
                 subprocess.check_output('git checkout -q -f {}'.format(sha), shell=True)
                 
-                if not visit_content_nbs(args.nb-path, execution_check):
+                if not visit_content_nbs(args.nb_path, execution_check):
                     success = False
 
         finally:

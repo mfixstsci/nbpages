@@ -389,6 +389,7 @@ def make_parser(parser=None):
     parser.add_argument('--report', default=None, dest='report_file',
                         help='The path and file name to write a Junit XML '
                              'report to. Extension will always be .xml')
+
     return parser
 
 
